@@ -80,4 +80,5 @@ nmap <c-q> :q<CR>
 imap <c-q> <Esc>:q<CR>
 
 map <c-t> :NERDTreeToggle<CR>
+map <c-r> :NERDTreeRefreshRoot<CR>
 " ================ KEY BINDS END ================ 
