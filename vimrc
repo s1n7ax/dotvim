@@ -27,34 +27,8 @@ call plug#end()
 
 
 
-
-" ================ VUNDLE ================ 
-" be iMproved, required
-set nocompatible
-
-" required
-filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-
-call vundle#end()
-"
-" required
-filetype plugin on
-" ================ VUNDLE END ================ 
-
-
-
-
-
-" ================ STARTUP ================ 
-" nerd tree open if a files not passed
-au StdinReadPre * let s:std_in=1
-au vimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-" ================ STARTUP END ================ 
+" ================ AUTOCMD ================ 
+" ================ AUTOCMD END ================ 
 
 
 
@@ -84,7 +58,6 @@ colorscheme minimalist
 set number
 set relativenumber
 
-set spell
 set spelllang=en
 
 set shiftwidth=4
