@@ -133,7 +133,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'Yggdroot/indentLine'
 Plug 'Raimondi/delimitMate'
 
 
@@ -153,7 +152,7 @@ let g:NERDToggleCheckAllLines = 1
 Plug 'scrooloose/nerdtree'
 nnoremap <Leader>nt :NERDTree<CR>
 nnoremap <Leader>ntf :NERDTreeFocus<CR>
-nnoremap <Leader>ntt :NERDTreeToggle<CR>
+nnoremap <Leader>1 :NERDTreeFocus<CR>
 nnoremap <Leader>ntr :NERDTreeRefreshRoot<CR>
 au StdinReadPre * let s:std_in=1
 au VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -165,7 +164,7 @@ let g:vimwiki_list = [{'path': '~/workspace/wiki',  'syntax': 'markdown', 'ext':
 
 "------------------------ AUTO SAVE ------------------------
 Plug '907th/vim-auto-save'
-let g:auto_save = 1
+let g:auto_save = 0
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
 
 "------------------------ THEME ------------------------
@@ -174,6 +173,7 @@ Plug 'gilgigilgil/anderson.vim'
 Plug 'romainl/Apprentice'
 Plug 'joshdick/onedark.vim'
 Plug 'rakr/vim-one'
+Plug 'vim-scripts/vimspell'
 
 call plug#end()
 " ================================ VIMPLUG END ================================
@@ -211,6 +211,8 @@ set mouse=a
 set splitbelow
 set splitright
 
+set scrolloff=10
+
 set t_Co=256
 set nohlsearch
 syntax on
@@ -243,4 +245,11 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+inoremap {<cr> {<cr>}<c-o>O
+inoremap [<cr> [<cr>]<c-o>O<tab>
+inoremap (<cr> (<cr>)<c-o>O<tab>
+map <F6> :setlocal spell! spelllang=en_us<CR>
+
+set fillchars+=vert:\|
 " ================================ KEY BINDS END ================================ 
