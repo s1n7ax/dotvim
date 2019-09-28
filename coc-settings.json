@@ -1,2 +1,9 @@
 {
+	"css.enable": true,
+	"html.enable": true,
+	"json.enable": true,
+	"css.validate": true,
+	"tsserver.log": "verbose",
+	"tsserver.enable": true,
+	"tsserver.formatOnType": false
 }
