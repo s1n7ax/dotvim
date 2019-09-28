@@ -5,5 +5,11 @@
 	"css.validate": true,
 	"tsserver.log": "verbose",
 	"tsserver.enable": true,
-	"tsserver.formatOnType": false
+	"tsserver.formatOnType": false,
+	"tslint.exclude": ["node_modules"],
+	"tslint.jsEnable": true,
+	"tslint.autoFixOnSave": true,
+	"tslint.ignoreDefinitionFiles": true,
+	"tslint.suppressWhileTypeErrorsPresent": false,
+	"tslint.alwaysShowRuleFailuresAsWarnings": true
 }
