@@ -14,5 +14,10 @@
 	"tslint.alwaysShowRuleFailuresAsWarnings": true,
 	"prettier.eslintIntegration": true,
 	"prettier.tslintIntegration": true,
-	"prettier.stylelintIntegration": true
+	"prettier.stylelintIntegration": true,
+	"coc.preferences.bracketEnterImprove": true,
+	"coc.preferences.enableFloatHighlight": true,
+	"coc.preferences.formatOnSaveFiletypes": ["typescript", "css", "javascript", "tsx", "jsx", "json", "html", "xml"],
+	"coc.preferences.snippets.enable": true,
+	"coc.preferences.previewAutoClose": true
 }
