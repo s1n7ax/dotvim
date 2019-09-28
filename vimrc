@@ -1,3 +1,4 @@
+set shell=/bin/sh
 let mapleader = ","
 
 " ================================ VIMPLUG ================================ 
@@ -10,7 +11,7 @@ Plug 'roxma/nvim-yarp'
 
 
 "------------------------ COC ------------------------
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'neoclide/coc.nvim', {'tag': '*'}
 let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -167,13 +168,18 @@ Plug '907th/vim-auto-save'
 let g:auto_save = 0
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
 
+
+"------------------------ STYLED COMPOENENTS ------------------------
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
 "------------------------ THEME ------------------------
-Plug 'dikiaap/minimalist'
-Plug 'gilgigilgil/anderson.vim'
-Plug 'romainl/Apprentice'
+" Plug 'dikiaap/minimalist'
+" Plug 'gilgigilgil/anderson.vim'
+" Plug 'romainl/Apprentice'
 Plug 'joshdick/onedark.vim'
-Plug 'rakr/vim-one'
-Plug 'vim-scripts/vimspell'
+" Plug 'rakr/vim-one'
+" Plug 'vim-scripts/vimspell'
+" Plug 'sts10/vim-pink-moon'
 
 call plug#end()
 " ================================ VIMPLUG END ================================
@@ -194,6 +200,15 @@ au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 " ================================ VIM DEFAULT CONF ================================ 
 set number
 set relativenumber
+
+" cursor
+let &t_SI.="\e[6 q" "SI = INSERT mode
+let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
+
+" code folding
+set foldmethod=syntax
+set foldlevelstart=1
 
 set spelllang=en
 
@@ -216,11 +231,13 @@ set scrolloff=10
 set t_Co=256
 set nohlsearch
 syntax on
-colorscheme minimalist
+" colorscheme minimalist
 " colorscheme anderson
 " colorscheme apprentice
-" colorscheme onedark
+colorscheme onedark
+" colorscheme pink-moon
 " colorscheme one
+set background=dark
 " ================================ VIM DEFAULT CONF END ================================ 
 
 
@@ -236,19 +253,24 @@ imap <c-s> <Esc>:w<CR>a
 nmap <c-q> :q<CR>
 imap <c-q> <Esc>:q<CR>
 
+" move line up and down
 nnoremap <S-Up> :m-2<CR>
 nnoremap <S-Down> :m+<CR>
 inoremap <S-Up> <Esc>:m-2<CR>
 inoremap <S-Down> <Esc>:m+<CR>
 
+" move between split views
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" auto close bracket
 inoremap {<cr> {<cr>}<c-o>O
 inoremap [<cr> [<cr>]<c-o>O<tab>
 inoremap (<cr> (<cr>)<c-o>O<tab>
+
+" spell ckeck
 map <F6> :setlocal spell! spelllang=en_us<CR>
 
 set fillchars+=vert:\|
