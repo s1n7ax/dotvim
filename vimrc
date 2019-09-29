@@ -170,7 +170,7 @@ let g:auto_save_events = ["InsertLeave", "TextChanged"]
 
 
 "------------------------ STYLED COMPOENENTS ------------------------
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+"Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 "------------------------ THEME ------------------------
 " Plug 'dikiaap/minimalist'
@@ -228,6 +228,25 @@ set splitright
 
 set scrolloff=10
 
+" replace yanked word
+" binds: cpw, cpi(
+nnoremap <silent> cp :let g:substitutemotion_reg = v:register
+            \ <bar> set opfunc=SubstituteMotion<CR>g@
+
+function! SubstituteMotion(type, ...)
+	let l:reg = g:substitutemotion_reg
+	if a:0
+		silent exe "normal! `<" . a:type . "`>\"_c\<c-r>" . l:reg . "\<esc>"
+	elseif a:type == 'line'
+		silent exe "normal! '[V']\"_c\<c-r>" . l:reg . "\<esc>"
+	elseif a:type == 'block'
+		silent exe "normal! `[\<C-V>`]\"_c\<c-r>" . l:reg . "\<esc>"
+	else
+		silent exe "normal! `[v`]\"_c\<c-r>" . l:reg . "\<esc>"
+	endif
+endfunction
+
+
 set t_Co=256
 set nohlsearch
 syntax on
@@ -238,6 +257,9 @@ colorscheme onedark
 " colorscheme pink-moon
 " colorscheme one
 set background=dark
+
+
+
 " ================================ VIM DEFAULT CONF END ================================ 
 
 
