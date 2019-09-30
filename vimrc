@@ -114,8 +114,10 @@ Plug 'leafgarland/typescript-vim'
 "------------------------ FZF ------------------------
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-nmap <C-p> :FZF<CR>
-imap <C-p> <Esc>:FZF<CR>
+" ignore files and folders in git ignore
+command! FZFGitIgnore call fzf#run(fzf#wrap({'source': 'git ls-files --exclude-standard --others --cached'}))
+nmap <C-p> :FZFGitIgnore <CR>
+imap <C-p> <Esc>:FZFGitIgnore <CR>
 nmap <Leader>fzl <Esc>:Lines<CR>
 nmap <Leader>fzb <Esc>:Buffers<CR>
 nmap <Leader>fzc <Esc>:Commits<CR>
