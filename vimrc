@@ -268,8 +268,9 @@ colorscheme onedark
 " colorscheme one
 set background=dark
 
+" set paste is removed because it disable the coc autocompletion
 " no format when pasting
-set paste
+" set paste
 
 set fillchars+=vert:\|
 
