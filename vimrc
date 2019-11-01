@@ -185,6 +185,7 @@ let g:auto_save_events = ["InsertLeave", "TextChanged"]
 " Plug 'gilgigilgil/anderson.vim'
 " Plug 'romainl/Apprentice'
 Plug 'joshdick/onedark.vim'
+" Plug 'arcticicestudio/nord-vim'
 " Plug 'rakr/vim-one'
 " Plug 'vim-scripts/vimspell'
 " Plug 'sts10/vim-pink-moon'
@@ -197,8 +198,8 @@ call plug#end()
 
 
 " ================================ AUTOCMD ================================ 
-au BufNewFile,BufRead *.ts setlocal filetype=typescript
-au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
+" au BufNewFile,BufRead *.ts setlocal filetype=typescript
+" au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 " ================================ AUTOCMD END ================================ 
 
 
@@ -262,9 +263,15 @@ syntax on
 " colorscheme anderson
 " colorscheme apprentice
 colorscheme onedark
+" colorscheme nord
 " colorscheme pink-moon
 " colorscheme one
 set background=dark
+
+" no format when pasting
+set paste
+
+set fillchars+=vert:\|
 
 
 
@@ -275,11 +282,14 @@ set background=dark
 
 
 " ================================ KEY BINDS ================================ 
+" go normal mode
 imap <silent> jk <Esc>
 
+" save
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>a
 
+" quit
 nmap <c-q> :q<CR>
 imap <c-q> <Esc>:q<CR>
 
@@ -303,5 +313,4 @@ inoremap (<cr> (<cr>)<c-o>O<tab>
 " spell ckeck
 map <F6> :setlocal spell! spelllang=en_us<CR>
 
-set fillchars+=vert:\|
 " ================================ KEY BINDS END ================================ 
