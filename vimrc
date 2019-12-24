@@ -153,7 +153,8 @@ au VimEnter * AirlineTheme bubblegum
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
-Plug 'airblade/vim-gitgutter'
+" vim gitgutter blocks the coc-nvim languale server validations in the editor
+" Plug 'airblade/vim-gitgutter'
 Plug 'Raimondi/delimitMate'
 
 
