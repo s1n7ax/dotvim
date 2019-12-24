@@ -11,8 +11,20 @@ Plug 'roxma/nvim-yarp'
 
 
 "------------------------ COC ------------------------
-Plug 'neoclide/coc.nvim', {'tag': '*'}
-let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:coc_global_extensions = [
+	\ 'coc-tslint-plugin', 
+	\ 'coc-tsserver', 
+	\ 'coc-python', 
+	\ 'coc-emmet', 
+	\ 'coc-css',
+	\ 'coc-html',
+	\ 'coc-json',
+	\ 'coc-yank',
+	\ 'coc-prettier',
+	\ 'coc-git',
+	\ 'coc-highlight'
+\]
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
