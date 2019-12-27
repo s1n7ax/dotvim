@@ -25,5 +25,8 @@
 	"prettier.stylelintIntegration": false,
 	"prettier.statusItemText": "Prettier",
 	"coc.preferences.formatOnSaveFiletypes": ["typescriptreact", "typescript"],
-	"diagnostic.messageTarget": "echo" 
+	"diagnostic.messageTarget": "echo",
+	"suggest.floatEnable": false,
+	"signature.target": "echo",
+	"coc.preferences.hoverTarget": "echo"
 }
