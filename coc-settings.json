@@ -15,6 +15,7 @@
 	"typescript.suggest.paths": true,
 	"typescript.suggest.enabled": true,
 	"typescript.suggest.autoImports": true,
+	"typescript.updateImportsOnFileMove.enable": true,
 	
 	"tslint.autoFixOnSave": true,
 	"tslint.alwaysShowRuleFailuresAsWarnings": false,
