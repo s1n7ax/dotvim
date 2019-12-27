@@ -190,8 +190,13 @@ let g:auto_save = 0
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
 
 
+"------------------------ SMOOTH SCROLL ------------------------
+Plug 'psliwka/vim-smoothie'
+
+
 "------------------------ STYLED COMPOENENTS ------------------------
 "Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+"
 
 "------------------------ THEME ------------------------
 " Plug 'dikiaap/minimalist'
