@@ -1,23 +1,29 @@
 {
-	"css.enable": true,
-	"html.enable": true,
-	"json.enable": true,
-	"css.validate": true,
-	"tsserver.log": "verbose",
+	"suggest.triggerAfterInsertEnter": true,
+	"suggest.noselect": false,
+	"suggest.minTriggerInputLength": 2,
+	"suggest.acceptSuggestionOnCommitCharacter": true,
+	"suggest.snippetIndicator": "►",
+
 	"tsserver.enable": true,
 	"tsserver.formatOnType": false,
-	"tslint.exclude": ["node_modules"],
-	"tslint.jsEnable": true,
+	"tsserver.enableJavascript": false,
+
+	"typescript.validate.enable": true,
+	"typescript.format.placeOpenBraceOnNewLineForFunctions": true,
+	"typescript.suggest.completeFunctionCalls": true,
+	"typescript.suggest.paths": true,
+	"typescript.suggest.enabled": true,
+	"typescript.suggest.autoImports": true,
+	
 	"tslint.autoFixOnSave": true,
-	"tslint.ignoreDefinitionFiles": true,
-	"tslint.suppressWhileTypeErrorsPresent": false,
-	"tslint.alwaysShowRuleFailuresAsWarnings": true,
-	"prettier.eslintIntegration": true,
+	"tslint.alwaysShowRuleFailuresAsWarnings": false,
+
+	"prettier.requireConfig": false,
 	"prettier.tslintIntegration": true,
-	"prettier.stylelintIntegration": true,
-	"coc.preferences.bracketEnterImprove": true,
-	"coc.preferences.enableFloatHighlight": true,
-	"coc.preferences.formatOnSaveFiletypes": ["typescript", "css", "javascript", "tsx", "jsx", "json", "html", "xml"],
-	"coc.preferences.snippets.enable": true,
-	"coc.preferences.previewAutoClose": true
+	"prettier.eslintIntegration": false,
+	"prettier.stylelintIntegration": false,
+	"prettier.statusItemText": "Prettier",
+	"coc.preferences.formatOnSaveFiletypes": ["typescriptreact", "typescript"],
+	"diagnostic.messageTarget": "echo" 
 }
