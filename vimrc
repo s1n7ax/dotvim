@@ -122,6 +122,10 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 
+"------------------------ VIM JAVASCRIPT ------------------------
+Plug 'pangloss/vim-javascript'
+
+
 "------------------------ VIM TSX ------------------------
 Plug 'ianks/vim-tsx'
 
@@ -147,6 +151,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_statusline_ontop=0
+let g:airline_theme = 'codedark'
+
 au VimEnter * AirlineTheme bubblegum
 
 
@@ -173,6 +179,7 @@ let g:NERDToggleCheckAllLines = 1
 
 "------------------------ NERD TREE ------------------------
 Plug 'scrooloose/nerdtree'
+let NERDTreeMapOpenInTab='<Leader>ntt'
 nnoremap <Leader>nt :NERDTree<CR>
 nnoremap <Leader>ntf :NERDTreeFocus<CR>
 nnoremap <Leader>1 :NERDTreeFocus<CR>
@@ -185,10 +192,15 @@ au VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 Plug 'vimwiki/vimwiki'
 let g:vimwiki_list = [{'path': '~/workspace/wiki',  'syntax': 'markdown', 'ext': '.md'}]
 
+"
 "------------------------ AUTO SAVE ------------------------
 Plug '907th/vim-auto-save'
 let g:auto_save = 0
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
+
+
+"------------------------ VIM STARTIFY ------------------------
+Plug 'mhinz/vim-startify'
 
 
 "------------------------ SMOOTH SCROLL ------------------------
@@ -200,14 +212,12 @@ Plug 'psliwka/vim-smoothie'
 "
 
 "------------------------ THEME ------------------------
-" Plug 'dikiaap/minimalist'
-" Plug 'gilgigilgil/anderson.vim'
-" Plug 'romainl/Apprentice'
-Plug 'joshdick/onedark.vim'
-" Plug 'arcticicestudio/nord-vim'
-" Plug 'rakr/vim-one'
-" Plug 'vim-scripts/vimspell'
-" Plug 'sts10/vim-pink-moon'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-colorscheme-switcher'
+let g:colorscheme_switcher_keep_background=1
+
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'tomasiser/vim-code-dark'
 
 call plug#end()
 " ================================ VIMPLUG END ================================
@@ -226,6 +236,10 @@ call plug#end()
 
 
 " ================================ VIM DEFAULT CONF ================================ 
+" color theme
+colorscheme OceanicNext
+set background=dark
+
 set number
 set relativenumber
 
@@ -236,7 +250,8 @@ let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 
 " code folding
 set foldmethod=syntax
-set foldlevelstart=1
+" set foldlevelstart=-1
+set nofoldenable
 
 set spelllang=en
 
@@ -278,17 +293,8 @@ endfunction
 set t_Co=256
 set nohlsearch
 syntax on
-" colorscheme minimalist
-" colorscheme anderson
-" colorscheme apprentice
-colorscheme onedark
-" colorscheme nord
-" colorscheme pink-moon
-" colorscheme one
-set background=dark
 
 " set paste is removed because it disable the coc autocompletion
-" no format when pasting
 " set paste
 
 set fillchars+=vert:\|
@@ -333,4 +339,9 @@ inoremap (<cr> (<cr>)<c-o>O<tab>
 " spell ckeck
 map <F6> :setlocal spell! spelllang=en_us<CR>
 
+" select functin
+nnoremap <Leader>vf va{V
+
+" switch to normal mode in terminal
+tnoremap <Esc> <C-\><C-n>
 " ================================ KEY BINDS END ================================ 

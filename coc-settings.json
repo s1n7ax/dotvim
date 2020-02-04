@@ -7,7 +7,7 @@
 
 	"tsserver.enable": true,
 	"tsserver.formatOnType": false,
-	"tsserver.enableJavascript": false,
+	"tsserver.enableJavascript": true,
 
 	"typescript.validate.enable": true,
 	"typescript.format.placeOpenBraceOnNewLineForFunctions": true,
@@ -22,10 +22,10 @@
 
 	"prettier.requireConfig": false,
 	"prettier.tslintIntegration": true,
-	"prettier.eslintIntegration": false,
+	"prettier.eslintIntegration": true,
 	"prettier.stylelintIntegration": false,
 	"prettier.statusItemText": "Prettier",
-	"coc.preferences.formatOnSaveFiletypes": ["typescriptreact", "typescript"],
+	"coc.preferences.formatOnSaveFiletypes": ["typescriptreact", "typescript", "javascript"],
 	"diagnostic.messageTarget": "echo",
 	"suggest.floatEnable": false,
 	"signature.target": "echo",
